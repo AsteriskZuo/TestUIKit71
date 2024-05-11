@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "react": "18.2.0",
-    "react-native": "0.71.11"
+    "react-native": "0.71.11",
+    "react-native-chat-sdk": "^1.4.0",
+    "react-native-chat-uikit": "^2.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
