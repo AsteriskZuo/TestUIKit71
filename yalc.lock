@@ -1,0 +1,8 @@
+{
+  "version": "v1",
+  "packages": {
+    "react-native-chat-uikit": {
+      "signature": "0dbbafcc181b592166c57427f4b12f71"
+    }
+  }
+}
