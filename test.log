@@ -1,0 +1,68 @@
+Debug local npm package.
+
+1. Create a new react-native project.
+
+```sh
+npx react-native init --version 0.71.11 TestUIKit71
+```
+
+2. Init a new npm package.
+
+```sh
+cd TestUIKit71
+yarn
+```
+
+3. Add the local package to the new project.
+
+```sh
+yarn add react-native-chat-uikit
+```
+
+4. Create a link to the local package.
+
+```sh
+cd /Users/asterisk/Codes/rn/react-native-chat-library-2.0/packages/react-native-chat-uikit
+yarn link
+```
+
+5. Link the local package to the new project.
+
+```sh
+yarn link react-native-chat-uikit
+```
+
+6. Add the local package to the watchFolders in the metro.config.js.
+7. Add the local package to the nodeModulesPaths in the metro.config.js.
+
+```js
+const source =
+  '/Users/asterisk/Codes/rn/react-native-chat-library-2.0/packages/react-native-chat-uikit';
+
+module.exports = {
+  watchFolders: [
+    // Add your project directories here
+    source,
+  ],
+  resolver: {
+    nodeModulesPaths: [
+      '/Users/asterisk/tmp/2024.05.11/TestUIKit71/node_modules',
+    ],
+  },
+  transformer: {
+    getTransformOptions: async () => ({
+      transform: {
+        experimentalImportSupport: false,
+        inlineRequires: true,
+      },
+    }),
+  },
+};
+```
+
+8. Init native modules in iOS platform.
+
+```sh
+cd ios
+pod install
+```
